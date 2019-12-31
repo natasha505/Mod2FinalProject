@@ -1,0 +1,11 @@
+<h1> My Watchlist </h1>
+
+<ul>
+    <% @watchlists.each do |watchlist| %>
+        <P><%= link_to watchlist.movie.title, movie_path(movie) %></p>
+    <% end %>
+<h1>Watchlist</h1>
+
+<% @watchlists.each do |wl| %>
+    <%= wl.movie_id%>
+<% end %>

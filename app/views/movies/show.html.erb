@@ -1,0 +1,9 @@
+<h1> Movie Info </h1> 
+    <img src= <%=@movie.poster%> width="120">
+    <p> Title: <%= @movie.title %></p>
+    <p> Release Year: <%= @movie.year %></p>
+    <p> Genre: <%= @movie.genre %></p>
+    <p> Plot: <%= @movie.plot %></p>
+
+<%= button_to "Movie Index", movies_path, method: :get %>    
+<%= button_to "Edit Movie", edit_movie_path, method: :get %>

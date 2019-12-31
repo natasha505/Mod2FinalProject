@@ -1,0 +1,2 @@
+class MovActorsController < ApplicationController
+end

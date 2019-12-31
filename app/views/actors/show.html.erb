@@ -1,0 +1,7 @@
+<h1> Actor Info:</h1>
+<p> Name: <%= @actor.name %></p>
+<p> DOB: <%= @actor.dob%> </p>
+<p> Bio: <%= @actor.bio %> </p>
+<%# <%= link_to "Actor Index", actors_path %>
+<%= button_to "Actor Index", actors_path, method: :get %>    
+<%= button_to "Edit Actor", edit_actor_path, method: :get %>
