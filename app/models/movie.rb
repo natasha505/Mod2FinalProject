@@ -1,11 +1,13 @@
 class Movie < ApplicationRecord
     has_many :watchlists
+    #  has_many :users, through: :watchlists
     has_many :mov_actors
     has_many :actors, through: :mov_actors 
 
 
 
     def self.search(search)
+        Movie.all
         if search
             movie_title = Movie.find_by(title: search)
             # byebug

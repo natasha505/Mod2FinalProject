@@ -1,9 +1,11 @@
-<h1> Movie Info </h1> 
-    <img src= <%=@movie.poster%> width="120">
-    <p> Title: <%= @movie.title %></p>
-    <p> Release Year: <%= @movie.year %></p>
-    <p> Genre: <%= @movie.genre %></p>
-    <p> Plot: <%= @movie.plot %></p>
+<h1> My Watchlist Index </h1>
 
-<%= button_to "Movie Index", movies_path, method: :get %>    
-<%= button_to "Edit Movie", edit_movie_path, method: :get %>
+<% @w.each do |watchlist_entry| %>
+    <%# <% watchlist_entry.user_id %> 
+    <%# <% watchlist_entry.movie_id %>
+    <img src= <%=watchlist_entry.movie.poster%> width="120"><br>
+    <p>Movie: <%= watchlist_entry.movie.title %></p>
+    <p>Rating: <%= watchlist_entry.rating %></p>
+    <p>Reivew: <%= watchlist_entry.review %></p><br>
+<% end %>
+<%= button_to "HOME", user_path, method: :get %>  

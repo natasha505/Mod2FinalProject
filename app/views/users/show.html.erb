@@ -1,9 +1,16 @@
-<h1> User Info:</h1>
+<h1> Hello, <%= @user.name %>:</h1>
+
 <img src= <%=@user.profile_pic%> width="120">
+<%# <%= image_tag "user-images/critic-rob.jpeg" %>
+
 <p> Username: <%= @user.username %></p>
 <p> Name: <%= @user.name%> </p>
 <p> Name: <%= @user.age%> </p>
 <p> Bio: <%= @user.bio %> </p>
-<%# <%= link_to "Actor Index", actors_path %>
-<%= button_to "HOME", users_path, method: :get %>    
-<%= button_to "Edit Account Info", edit_user_path, method: :get %>
+<%# <%= link_to "My Watchlist", watchlist_path %>
+<%= button_to "HOME", users_path, method: :get %><br>    
+<%= button_to "Edit Account Info", edit_user_path, method: :get %><br>
+<%= button_to "View My Watchlist", watchlist_path, method: :get%><br>
+<%= button_to "Add Movie To Watchlist", movies_path, method: :get%>
+<br><br><br><br><br><br><br>
+<%= button_to "Delete Account", user_path(@user), method: :delete %>

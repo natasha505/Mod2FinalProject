@@ -1,5 +1,8 @@
 <h1> Add User Info </h1>
+
 <%= form_for(@user) do |f| %>
+
+<%= f.file_field :images %>
 
     <%= f.label :profile_pic %>
     <%= f.text_field :profile_pic %>

@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-
-
-    def index       #do i really need a USER index. dont want others to see all users....
+    
+    def index       
         @users = User.all
     end 
 
-    def show    #will this be the homepage????
-        @user = User.find(params[:id])
+    def show    
+        find_user
     end 
 
     def new
@@ -15,19 +14,27 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        if @user.save
-            redirect_to @user
-        else
+        # @user = User.new
+        # @user.username = user_params[:username]
+        # @user.name = user_params[:name]
+        # @user.age = user_params[:age]
+        # @user.bio = user_params[:bio]
+        # @user.image = user_params[:image]
+        if @user.valid?
+            flash[:login_message] = "Account already exists. Please login."
+            redirect_to login_path
+        else  
             render :new
-        end
+        end 
+        # add_more_images(user_params[:image])
     end 
 
     def edit
-        @user = User.find(params[:id])
+        find_user
     end
 
     def update
-        @user = User.find(params[:id])
+        find_user
         if @user.update(user_params)
             redirect_to user_path
         else
@@ -36,15 +43,25 @@ class UsersController < ApplicationController
     end 
 
     def destroy
-        @user = User.find(params[:id])
+        @user = find_user
         @user.delete
-        redirect_to #home_page
+        redirect_to welcome_path
     end 
 
+    
     private
+    
+    def add_more_images(new_image)
+        image = @user.image 
+        image += new_image
+        @user.image = image
+    end
 
     def user_params
-        params.require(:user).permit(:username, :name, :age, :bio, :profile_pic)
+        params.require(:user).permit(:username, :name, :age, :bio, :profile_pic, :image)
     end 
 
+    def find_user
+        @user = User.find(params[:id])
+    end
 end

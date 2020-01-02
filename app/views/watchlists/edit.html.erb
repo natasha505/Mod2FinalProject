@@ -1,6 +1,6 @@
-<h1> Edit Movie Info </h1>
+<h1> Edit your watchlist </h1>
 
-<%= form_for(@movie) do |f| %>
+<%= form_for(@watchlist) do |f| %>
     <%= f.label :poster %>
     <%= f.text_field :poster%>
 <br><br>
@@ -17,4 +17,12 @@
     <%= f.text_field :plot%>
 <br><br>
     <%= f.submit "Edit Movie"%>
+<% end %>
+
+<%= form_for @w.each do |watchlist_entry| %>
+    <%# <% watchlist_entry.user_id %> 
+    <%# <% watchlist_entry.movie_id %>
+    <p>Movie: <%= watchlist_entry.movie.title %></p>
+    <p>Rating: <%= watchlist_entry.rating %></p>
+    <p>Reivew: <%= watchlist_entry.review %></p><br>
 <% end %>

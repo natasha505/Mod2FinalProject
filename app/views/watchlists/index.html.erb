@@ -1,11 +1,18 @@
-<h1> My Watchlist </h1>
+<h1> My Watchlist Index </h1>
 
-<ul>
-    <% @watchlists.each do |watchlist| %>
-        <P><%= link_to watchlist.movie.title, movie_path(movie) %></p>
-    <% end %>
-<h1>Watchlist</h1>
-
-<% @watchlists.each do |wl| %>
-    <%= wl.movie_id%>
+<% @w.each do |watchlist_entry| %>
+    <%# <% watchlist_entry.user_id %> 
+    <%# <% watchlist_entry.movie_id %>
+    <p>Movie: <%= watchlist_entry.movie.title %></p>
+    <p>Rating: <%= watchlist_entry.rating %></p>
+    <p>Reivew: <%= watchlist_entry.review %></p><br>
 <% end %>
+
+
+
+
+<%# 
+<% @watchlists.each do |wl| %>
+<%# <%= wl.user_id == @user.id %>
+<%# <%end%>
+
