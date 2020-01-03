@@ -3,6 +3,7 @@
 
 ## About 
 This is a mini IMDB type application. FYI, there is currently no API linked. Users can manually add movie info, reviews, & rating, & add set movie to their watchlist.
+### no CSS styling as been implemented yet...
 
 ## Installation
 After downloading this repo, install necessary gems then migrate & seed.
