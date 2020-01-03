@@ -1,3 +1,4 @@
+
 <h1> Hello, <%= @user.name %>:</h1>
 
 <img src= <%=@user.profile_pic%> width="120">
@@ -14,3 +15,6 @@
 <%= button_to "Add Movie To Watchlist", movies_path, method: :get%>
 <br><br><br><br><br><br><br>
 <%= button_to "Delete Account", user_path(@user), method: :delete %>
+<%= link_to "Logout", logout_path%>
+
+<%= flash[:message]%>

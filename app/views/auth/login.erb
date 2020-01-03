@@ -1,8 +1,21 @@
 <h2>LOG-IN PAGE</h2>
-<%= flash[:message]%>
-<%= flash[:login_message]%>
-<%= form_for :auth, url: login_path do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <%= f.submit "LOG-IN" %>
-<% end %>
+
+<%# <%= flash[:message]%>
+<%# <%= flash[:login_message]%> 
+<%# <%= form_for :auth, url: login_path do |f| %> 
+    <%# <%= f.label :username %> 
+    <%# <%= f.text_field :username %> 
+    <%# <%= f.submit "LOG-IN" %> 
+<%# <% end %> 
+
+    <%= flash[:message] %>
+    <%= form_for :auth do |f| %><br>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+        <%= f.label :password %>
+        <%= f.password_field :password %><br><br>
+        <%= f.submit "LOG-IN" %>
+    <% end %>
+    <br>
+    <%= button_to "SIGN-UP", signup_path, method: :get%>
+

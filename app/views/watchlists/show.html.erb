@@ -1,6 +1,6 @@
 <h1> My Watchlist Index </h1>
 
-<% @w.each do |watchlist_entry| %>
+<% @watchlist.each do |watchlist_entry| %>
     <%# <% watchlist_entry.user_id %> 
     <%# <% watchlist_entry.movie_id %>
     <img src= <%=watchlist_entry.movie.poster%> width="120"><br>

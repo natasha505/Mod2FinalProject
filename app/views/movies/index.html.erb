@@ -8,6 +8,6 @@
 
 <ul>
     <% @movies.each do |movie| %>
-        <P><%= link_to movie.title, movie_path(movie) %></p>
+        <P><%= link_to movie.title, movie_path(movie) %> <%= button_to "Add to Watchlist", {controller: :watchlists , method: :post, action: "create", :movie_id => movie.id}%> </p>
     <% end %>
 </ul>
