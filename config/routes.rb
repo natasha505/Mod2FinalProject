@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get '/', to: "welcome#index"
+  # get '/', to: "welcome#index", as 'root'
+  root to: "welcome#index"
 
   resources :users#, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :mov_actors

@@ -59,7 +59,7 @@ class UsersController < ApplicationController
     def destroy
         @user = find_user
         @user.delete #destroy
-        redirect_to welcome_path
+        redirect_to root
     end 
 
     
